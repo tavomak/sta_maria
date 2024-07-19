@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-sky-950 to-sky-900">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-sky-900 to-sky-950">
       <svg
-        className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
+        className="hidden absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"
         height="488"
         viewBox="0 0 2745 488"
@@ -101,6 +101,7 @@ const Footer = () => {
               alt="Logo"
               width={180}
               height={32}
+              className="hidden"
             />
           </div>
         </div>

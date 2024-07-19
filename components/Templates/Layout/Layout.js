@@ -1,16 +1,27 @@
-import Head from "next/head";
+import { Roboto, Playfair } from "next/font/google";
 import useTranslation from "next-translate/useTranslation";
-import { Inter } from "next/font/google";
+import Head from "next/head";
+
 import Navbar from "@/components/Molecules/Navbar";
 import Footer from "@/components/Molecules/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+  weight: ["100", "400", "500"],
+});
+const playfair = Playfair({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 const Layout = ({ children, title, description }) => {
   const hostname = typeof window !== "undefined" ? window.location.href : "";
   const { t } = useTranslation("common");
   return (
-    <>
+    <div className={`${roboto.variable} ${playfair.variable}`}>
       <Head>
         <title>{`${title} | ${t("site_name")}`}</title>
         <meta charSet="UTF-8" />
@@ -95,10 +106,10 @@ const Layout = ({ children, title, description }) => {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Navbar className={inter.className} />
-      <main className={`min-h-screen ${inter.className}`}>{children}</main>
+      <Navbar />
+      <main className="min-h-screen">{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 

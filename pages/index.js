@@ -1,8 +1,9 @@
 import { AdvancedVideo } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import Layout from "@/components/Templates/Layout";
+import CustomLightbox from "@/components/Molecules/CustomLightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export default function Home() {
   const { t } = useTranslation(["common", "home"]);
@@ -13,14 +14,35 @@ export default function Home() {
   });
 
   const openingVideo = cld.video("SMBORDEAUX_qf9cos");
+  const closingVideoVideo = cld.video("STAMARIA02_g0ey5s");
+
+  const yachts = [
+    { src: "/07yachts.jpg" },
+    { src: "/01yachts.jpg" },
+    { src: "/02yachts.jpg" },
+    { src: "/03yachts.jpg" },
+    { src: "/04yachts.jpg" },
+    { src: "/06yachts.jpg" },
+  ];
+
+  const experiences = [
+    { src: "/04experience.jpg" },
+    { src: "/01experience.jpg" },
+    { src: "/02experience.jpg" },
+    { src: "/03experience.jpg" },
+    { src: "/06experience.jpg" },
+    { src: "/07experience.jpg" },
+    { src: "/08experience.jpg" },
+    { src: "/09experience.jpg" },
+  ];
 
   return (
     <Layout title={t("home:ending")} description={t("home:subtitle")}>
-      <section className="w-full relative overflow-hidden">
-        {/* <article className="absolute top-1/2 translate-y-1/2 text-white z-20">
+      <section className="flex w-full max-h-[calc(100vh-200px)] relative">
+        <article className="hidden absolute top-1/2 translate-y-1/2 text-white z-20">
           <h1>{t("home:title")}</h1>
-        </article> */}
-        {/* <div className="absolute bg-sky-950 w-full h-screen z-10 opacity-20" /> */}
+        </article>
+        <div className="absolute bg-sky-950 w-full h-full z-10 opacity-10" />
         <AdvancedVideo
           cldVid={openingVideo}
           autoPlay
@@ -28,46 +50,36 @@ export default function Home() {
           loop
           muted
           playsInline
-          poster="/DSC07121.jpg"
+          poster="/10experience.jpg"
         />
       </section>
 
       <section className="md:flex items-center bg-gradient-to-r from-cyan-600 to-sky-950">
-        <div className="md:w-1/2 p-4 xl:px-32">
-          <h2 className="text-white text-xl mb-6 font-bold">
+        <div className="md:w-1/2 p-4 xl:px-36">
+          <h2 className="text-white mb-6 font-semibold uppercase text-sm drop-shadow">
             {t("home:ending")}
           </h2>
           <p className="text-white mb-6">{t("home:paraphrase")}</p>
           <p className="text-white">{t("home:subtitle")}</p>
         </div>
-        <div className="md:w-1/2 relative">
-          <Image
-            src="/11SESSION.jpg"
-            alt="Unsplash"
-            width={500}
-            height={500}
-            style={{ width: "100%", height: "auto" }}
+        <div className="md:w-1/2">
+          <CustomLightbox
+            slides={experiences}
+            primaryImage="/04experience.jpg"
+            title="Experiences"
           />
         </div>
       </section>
 
       <section className="md:flex items-center bg-gradient-to-r from-cyan-600 to-sky-950">
-        <div className="md:w-1/2">
-          <Image
-            src="/07SESSION.jpg"
-            alt="Unsplash"
-            width={500}
-            height={500}
-            style={{ width: "100%", height: "auto" }}
-          />
-        </div>
         <div className="md:w-1/2 relative">
-          <Image
-            src="/DSC07116.jpg"
-            alt="Unsplash"
-            width={500}
-            height={500}
-            style={{ width: "100%", height: "auto" }}
+          <AdvancedVideo cldVid={closingVideoVideo} controls loop playsInline />
+        </div>
+        <div className="md:w-1/2">
+          <CustomLightbox
+            slides={yachts}
+            primaryImage="/07yachts.jpg"
+            title="Yachts"
           />
         </div>
       </section>

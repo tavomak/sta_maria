@@ -26,6 +26,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+main, header, footer {
+  font-family: var(--font-roboto);
+  font-weight: 100;
+}
+
+.font-display {
+  font-family: var(--font-playfair);
+}
+
+p {
+  font-size: 14px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -34,4 +47,7 @@ body {
 
 video {
   width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
