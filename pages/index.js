@@ -77,8 +77,8 @@ export default function Home() {
                 <Image
                   src={`/${icon}.svg`}
                   alt={t(`home:icons:${index}`)}
-                  width={42}
-                  height={42}
+                  width={30}
+                  height={30}
                 />
               </li>
             ))}
