@@ -1,8 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import i18nConfig from "@/i18n.json";
 
 const { locales } = i18nConfig;
+const flagIcons = {
+  en: "eng",
+  es: "spa",
+};
 
 export default function ChangeLanguage() {
   const { t, lang } = useTranslation();
@@ -12,7 +17,19 @@ export default function ChangeLanguage() {
 
     return (
       <Link href="/" locale={lng} key={lng}>
-        <span className="uppercase">{t(`${lng}`)}</span>
+        <ul className="flex items-center gap-2 ">
+          <li>
+            <Image
+              src={`/${flagIcons[lng]}.svg`}
+              alt={`${lng} flag`}
+              width={32}
+              height={32}
+            />
+          </li>
+          <li>
+            <span className="uppercase">{t(`${lng}`)}</span>
+          </li>
+        </ul>
       </Link>
     );
   });

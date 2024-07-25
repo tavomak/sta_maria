@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { AdvancedVideo } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
 import useTranslation from "next-translate/useTranslation";
@@ -36,6 +37,15 @@ export default function Home() {
     { src: "/09experience.jpg" },
   ];
 
+  const icons = () => {
+    const iconList = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i <= 9; i++) {
+      iconList.push(`sta-ico-${i < 9 ? `0${i + 1}` : i + 1}`);
+    }
+    return iconList;
+  };
+
   return (
     <Layout title={t("home:ending")} description={t("home:subtitle")}>
       <section className="flex w-full max-h-[calc(100vh-200px)] relative">
@@ -61,6 +71,18 @@ export default function Home() {
           </h2>
           <p className="text-white mb-6">{t("home:paraphrase")}</p>
           <p className="text-white">{t("home:subtitle")}</p>
+          <ul className="flex flex-wrap items-center justify-between gap-1 mt-8">
+            {icons().map((icon, index) => (
+              <li key={icon}>
+                <Image
+                  src={`/${icon}.svg`}
+                  alt={t(`home:icons:${index}`)}
+                  width={42}
+                  height={42}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="md:w-1/2">
           <CustomLightbox
@@ -71,9 +93,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* <section className="py-10 bg-sky-600">
+
+      </section> */}
+
       <section className="md:flex items-center bg-gradient-to-r from-cyan-600 to-sky-950">
         <div className="md:w-1/2 relative">
-          <AdvancedVideo cldVid={closingVideoVideo} controls loop playsInline />
+          <AdvancedVideo
+            cldVid={closingVideoVideo}
+            autoPlay
+            controls
+            loop
+            muted
+            playsInline
+          />
         </div>
         <div className="md:w-1/2">
           <CustomLightbox
