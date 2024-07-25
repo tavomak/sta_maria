@@ -14,8 +14,8 @@ export default function Home() {
     },
   });
 
-  const openingVideo = cld.video("SMBORDEAUX_qf9cos");
-  const closingVideoVideo = cld.video("STAMARIA02_g0ey5s");
+  const closingVideoVideo = cld.video("SMBORDEAUX_qf9cos");
+  const openingVideo = cld.video("STAMARIA02_g0ey5s");
 
   const yachts = [
     { src: "/07yachts.jpg" },
