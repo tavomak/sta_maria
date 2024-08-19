@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import LangSwitch from "@/components/Atoms/LangSwitch";
 
 const Navbar = ({ className }) => {
@@ -9,14 +10,14 @@ const Navbar = ({ className }) => {
         aria-label="Global"
       >
         <div className="px-2">
-          <a className="" href="!#" aria-label="Preline">
+          <Link href="/">
             <Image
               src="/sta_maria_white.svg"
               alt="Logo"
               width={140}
               height={64.5}
             />
-          </a>
+          </Link>
         </div>
         <div className="text-white px-4">
           <LangSwitch />

@@ -4,6 +4,7 @@
   "defaultLocale": "en",
   "pages": {
     "*": ["common"],
-    "/": ["home"]
+    "/": ["home"],
+    "/team": ["team"]
   }
 }

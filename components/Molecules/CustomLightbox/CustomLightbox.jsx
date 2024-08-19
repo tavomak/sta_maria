@@ -22,12 +22,13 @@ const CustomLightbox = ({ primaryImage, slides, title }) => {
           <p className="text-white text-balance uppercase font-semibold drop-shadow">
             {title}
           </p>
-          {slides.map((slide) => (
-            <span
-              key={slide.src}
-              className="h-3 w-3 rounded-full bg-white mx-2 opacity-80 drop-shadow"
-            />
-          ))}
+          {slides?.length > 1 &&
+            slides.map((slide) => (
+              <span
+                key={slide.src}
+                className="h-3 w-3 rounded-full bg-white mx-2 opacity-80 drop-shadow"
+              />
+            ))}
         </div>
       </button>
       <Lightbox open={open} close={() => setOpen(false)} slides={slides} />
