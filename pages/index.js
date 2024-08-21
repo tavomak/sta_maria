@@ -52,7 +52,7 @@ export default function Home() {
         <article className="hidden absolute top-1/2 translate-y-1/2 text-white z-20">
           <h1>{t("home:title")}</h1>
         </article>
-        <div className="absolute bg-sky-950 w-full h-full z-10 opacity-10" />
+        <div className="absolute bg-sky-950 w-full h-full z-1 opacity-10" />
         <AdvancedVideo
           cldVid={openingVideo}
           autoPlay

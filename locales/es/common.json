@@ -4,6 +4,13 @@
   "nav_about_title": "About",
   "nav_contact_title": "Contacto",
   "btn_view_all_episodes": "Ver todos",
-  "site_name": "Sta Maria Yachts"
-
+  "site_name": "Sta Maria Yachts",
+  "contactTitle": "Contactanos",
+  "contactDescription": "Estamos siempre listos para escucharte. Si tienes alguna pregunta o sugerencia, no dudes en contactarnos.",
+  "contactName": "Nombre",
+  "contactEmail": "Correo",
+  "contactMessage": "Mensaje",
+  "contactSubmit": "Enviar",
+  "contactSuccess": "Su mensaje ha sido enviado. Gracias!",
+  "contactError": "Ha habido un error al enviar el mensaje. Por favor, vuelva a intentarlo."
 }

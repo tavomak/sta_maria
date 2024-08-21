@@ -30,22 +30,16 @@ const Team = () => {
           />
         </div>
         <div className="w-full lg:w-2/4">
-          <h2 className="text-3xl font-medium uppercase mb-4">Jorge Gastó</h2>
-          <p>
-            Soy un ingeniero y navegante apasionado que ha recorrido el mundo en
-            busca de aventuras únicas. Comprometido con la excelencia y la
-            innovación, lidero este equipo para ofrecer experiencias de
-            navegación de lujo y sin igual a bordo de nuestro Lagoon 55. Mi
-            compromiso es asegurar que tengas experiencias únicas e
-            irrepetibles, que superen tus expectativas y te dejen recuerdos
-            imborrables.
-          </p>
+          <h2 className="text-3xl font-medium uppercase mb-4">
+            {t("team:jorgeTitle")}
+          </h2>
+          <p>{t("team:jorgeDescription")}</p>
         </div>
       </section>
       <section className="container mx-auto px-4 py-4 flex flex-col lg:flex-row justify-center  lg:gap-4 items-center relative lg:-top-24">
         <div className="w-full lg:w-1/4 drop-shadow mb-4 lg:mb-0 lg:order-last">
           <Image
-            src="/01_profile.jpg"
+            src="/02_profile.jpg"
             alt="Sta Maria Yachts"
             width={500}
             height={500}
@@ -53,16 +47,10 @@ const Team = () => {
           />
         </div>
         <div className="w-full lg:w-2/4 ">
-          <h2 className="text-3xl font-medium uppercase mb-4">Jorge Gastó</h2>
-          <p>
-            Soy un ingeniero y navegante apasionado que ha recorrido el mundo en
-            busca de aventuras únicas. Comprometido con la excelencia y la
-            innovación, lidero este equipo para ofrecer experiencias de
-            navegación de lujo y sin igual a bordo de nuestro Lagoon 55. Mi
-            compromiso es asegurar que tengas experiencias únicas e
-            irrepetibles, que superen tus expectativas y te dejen recuerdos
-            imborrables.
-          </p>
+          <h2 className="text-3xl font-medium uppercase mb-4">
+            {t("team:fernandoTitle")}
+          </h2>
+          <p>{t("team:fernandoDescription")}</p>
         </div>
       </section>
     </Layout>
