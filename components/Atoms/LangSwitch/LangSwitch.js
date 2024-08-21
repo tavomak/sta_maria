@@ -16,8 +16,8 @@ export default function ChangeLanguage() {
     if (lng === lang) return null;
 
     return (
-      <Link href="/" locale={lng} key={lng}>
-        <ul className="flex items-center gap-2 ">
+      <Link href="/" locale={lng} key={lng} className="z-20">
+        <ul className="flex items-center gap-2">
           <li>
             <Image
               src={`/${flagIcons[lng]}.svg`}
