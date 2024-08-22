@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
 import LangSwitch from "@/components/Atoms/LangSwitch";
 import Hamburger from "../Hamburger";
 
 const Navbar = ({ className }) => {
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation("common");
   return (
     <header className="flex z-50 w-full py-4 bg-gradient-to-b from-sky-950 to-sky-900">
       <nav
@@ -40,7 +42,7 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>Inicio</span>
+                    <span>{t("nav_home_title")}</span>
                   </h2>
                 </Link>
               </li>
@@ -55,7 +57,7 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>Team</span>
+                    <span>{t("nav_team_title")}</span>
                   </h2>
                 </Link>
               </li>
@@ -70,7 +72,7 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>Contacto</span>
+                    <span>{t("nav_contact_title")}</span>
                   </h2>
                 </Link>
               </li>

@@ -93,10 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="py-10 bg-sky-600">
-
-      </section> */}
-
       <section className="md:flex items-center bg-gradient-to-r from-cyan-600 to-sky-950">
         <div className="md:w-1/2 relative">
           <AdvancedVideo

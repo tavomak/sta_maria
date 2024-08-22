@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Resend } from "resend";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import Layout from "@/components/Templates/Layout";
@@ -14,7 +15,22 @@ const Contact = () => {
   const { t } = useTranslation("common");
 
   const onSubmit = async (form) => {
-    console.log(form);
+    try {
+      const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+
+      resend.emails.send({
+        from: process.env.NEXT_PUBLIC_RESEND_FROM,
+        to: process.env.NEXT_PUBLIC_RESEND_TO,
+        subject: "Nuevo Contacto web",
+        html: `
+        <p><strong>Nombre</strong>${form.name}</p>
+        <p><strong>Email</strong>${form.email}</p>
+        <p><strong>Mensaje</strong>${form.message}</p>
+        `,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
   return (
     <Layout title={t("contactTitle")} description={t("contactDescription")}>
@@ -62,10 +78,10 @@ const Contact = () => {
               id="message"
             />
             <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
-              Mensaje
+              {t("contactMessage")}
             </span>
           </label>
-          <Button type="submit">{t("contactSubmit")}</Button>
+          <Button submit>{t("contactSubmit")}</Button>
         </form>
       </section>
     </Layout>

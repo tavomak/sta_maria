@@ -1,17 +1,18 @@
 {
   "nav_homepage_title": "Sailing through experiences",
   "nav_episodes_title": "Episodes",
-  "nav_about_title": "About",
+  "nav_home_title": "Home",
+  "nav_team_title": "Team",
   "nav_contact_title": "Contact",
-  "btn_view_all_episodes": "View all",
   "site_name": "Sta Maria Yachts",
   "contactTitle": "Contact",
   "contactDescription": "We are always happy to hear from you. If you have any questions or suggestions, please don't hesitate to contact us.",
   "contactName": "Name",
+  "contactNameRequired": "Please enter your name",
   "contactEmail": "Email",
+  "contactEmailRequired": "Please enter a valid email address",
   "contactMessage": "Message",
   "contactSubmit": "Submit",
   "contactSuccess": "Your message has been sent. Thank you!",
-  "contactError": "There was an error sending your message. Please try again later.",
-  "contactEmailError": "Please enter a valid email address."
+  "contactError": "There was an error sending your message. Please try again later."
 }
