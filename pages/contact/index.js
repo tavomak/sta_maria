@@ -27,7 +27,7 @@ const Contact = () => {
           objectPosition="bottom"
         />
         <div className="overlay absolute w-full h-full bg-indigo-950 opacity-50" />
-        <h1 className="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-4xl w-full text-center">
+        <h1 className="hidden text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-4xl w-full text-center">
           {t("contactTitle")}
         </h1>
       </section>
