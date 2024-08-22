@@ -100,14 +100,17 @@ const Footer = () => {
       <div className="relative z-10">
         <div className="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
           <div className="flex items-stretch justify-center">
-            <p className="text-white text-sm uppercase font-semibold drop-shadow flex items-center">
-              <span className="pe-2">{new Date().getFullYear()}</span>
-              <span>{t("footerTitle")} </span>
-              <span className="ps-4 pe-2">
-                <FaEnvelope />
-              </span>
+            <p className="text-white text-xs uppercase drop-shadow flex flex-col md:flex-row items-center">
               <span>
-                <a href="mailto:contact@stamariayachts.com" className="text-sm">
+                <span className="pe-2">{new Date().getFullYear()}</span>{" "}
+                {t("footerTitle")}{" "}
+              </span>
+
+              <span className="flex items-center">
+                <span className="ps-4 pe-2">
+                  <FaEnvelope />
+                </span>
+                <a href="mailto:contact@stamariayachts.com" className="text-xs">
                   contact@stamariayachts.com
                 </a>
               </span>
