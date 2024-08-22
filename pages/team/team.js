@@ -6,7 +6,7 @@ const Team = () => {
   const { t } = useTranslation(["team"]);
   return (
     <Layout title={t("team:title")} description={t("team:description")}>
-      <section className="relative min-h-[calc(100vh-300px)]">
+      <section className="hidden relative">
         <Image
           src="/01experience.jpg"
           alt="Sta Maria Yachts"
@@ -19,14 +19,19 @@ const Team = () => {
           {t("team:pageTitle")}
         </h1>
       </section>
-      <section className="container mx-auto px-4 py-4 flex flex-col lg:flex-row justify-center lg:gap-4 items-center relative lg:-top-14">
-        <div className="w-full lg:w-1/4 drop-shadow mb-4 lg:mb-0">
+      <section className="container mx-auto px-4 py-10 flex flex-col lg:flex-row justify-center lg:gap-4 items-center">
+        <div className="w-full h-60 overflow-hidden lg:w-1/4 drop-shadow mb-4 lg:mb-0">
           <Image
             src="/01_profile.jpg"
             alt="Sta Maria Yachts"
             width={500}
             height={500}
-            style={{ width: "100%", height: "auto" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
           />
         </div>
         <div className="w-full lg:w-2/4">
@@ -36,14 +41,19 @@ const Team = () => {
           <p>{t("team:jorgeDescription")}</p>
         </div>
       </section>
-      <section className="container mx-auto px-4 py-4 flex flex-col lg:flex-row justify-center  lg:gap-4 items-center relative lg:-top-24">
-        <div className="w-full lg:w-1/4 drop-shadow mb-4 lg:mb-0 lg:order-last">
+      <section className="container mx-auto px-4 py-10 flex flex-col lg:flex-row justify-center  lg:gap-4 items-center ">
+        <div className="w-full h-60 overflow-hidden lg:w-1/4 drop-shadow mb-4 lg:mb-0 lg:order-last">
           <Image
             src="/02_profile.jpg"
             alt="Sta Maria Yachts"
             width={500}
             height={500}
-            style={{ width: "100%", height: "auto" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
           />
         </div>
         <div className="w-full lg:w-2/4 ">

@@ -14,5 +14,6 @@
   "contactMessage": "Message",
   "contactSubmit": "Submit",
   "contactSuccess": "Your message has been sent. Thank you!",
-  "contactError": "There was an error sending your message. Please try again later."
+  "contactError": "There was an error sending your message. Please try again later.",
+  "footerTitle": "© 2022 Sta Maria Yachts. All Rights Reserved."
 }

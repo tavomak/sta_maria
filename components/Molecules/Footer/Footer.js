@@ -1,6 +1,9 @@
 import Image from "next/image";
+import useTranslation from "next-translate/useTranslation";
 
 const Footer = () => {
+  const { t } = useTranslation("common");
+
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-sky-900 to-sky-950">
       <svg
@@ -96,6 +99,9 @@ const Footer = () => {
       <div className="relative z-10">
         <div className="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
           <div className="flex items-stretch justify-center">
+            <h3 className="text-white text-balance uppercase font-semibold drop-shadow">
+              {t("footerTitle")}
+            </h3>
             <Image
               src="/sta_maria_white.svg"
               alt="Logo"

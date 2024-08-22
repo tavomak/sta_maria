@@ -33,7 +33,7 @@ const Navbar = ({ className }) => {
             <ul className="flex flex-col  gap-4">
               <li>
                 <Link href="/">
-                  <h2 className="text-4xl flex gap-2">
+                  <h2 className="flex items-center gap-2">
                     <span>
                       <Image
                         src="/sta-ico-01.svg"
@@ -42,13 +42,15 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>{t("nav_home_title")}</span>
+                    <span className="text-white text-balance uppercase font-semibold drop-shadow">
+                      {t("nav_home_title")}
+                    </span>
                   </h2>
                 </Link>
               </li>
               <li>
                 <Link href="/team">
-                  <h2 className="text-4xl flex gap-2">
+                  <h2 className="flex items-center gap-2">
                     <span>
                       <Image
                         src="/sta-ico-03.svg"
@@ -57,13 +59,15 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>{t("nav_team_title")}</span>
+                    <span className="text-white text-balance uppercase font-semibold drop-shadow">
+                      {t("nav_team_title")}
+                    </span>
                   </h2>
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  <h2 className="text-4xl flex gap-2">
+                  <h2 className="flex items-center gap-2">
                     <span>
                       <Image
                         src="/sta-ico-10.svg"
@@ -72,7 +76,9 @@ const Navbar = ({ className }) => {
                         height={30}
                       />
                     </span>
-                    <span>{t("nav_contact_title")}</span>
+                    <span className="text-white text-balance uppercase font-semibold drop-shadow">
+                      {t("nav_contact_title")}
+                    </span>
                   </h2>
                 </Link>
               </li>

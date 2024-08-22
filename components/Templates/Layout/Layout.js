@@ -107,7 +107,9 @@ const Layout = ({ children, title, description }) => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <Navbar />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-[calc(100vh-225px)] flex flex-col">
+        {children}
+      </main>
       <Footer />
     </div>
   );

@@ -34,20 +34,21 @@ const Contact = () => {
   };
   return (
     <Layout title={t("contactTitle")} description={t("contactDescription")}>
-      <section className="relative min-h-[500px]">
+      <section className="relative min-h-[500px] hidden">
         <Image
           src="/06experience.jpg"
           alt="Sta Maria Yachts"
           fill
           objectFit="cover"
           objectPosition="bottom"
+          className=""
         />
         <div className="overlay absolute w-full h-full bg-indigo-950 opacity-50" />
         <h1 className="hidden text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-4xl w-full text-center">
           {t("contactTitle")}
         </h1>
       </section>
-      <section className="mx-auto max-w-xl rounded-lg border border-gray-200 bg-white px-8 py-4 shadow-sm transition hover:shadow-lg relative lg:-top-28">
+      <section className="container mt-10 mx-auto max-w-xl rounded-lg border border-gray-200 bg-white px-8 py-4 shadow-sm transition hover:shadow-lg">
         <form className="py-4" onSubmit={handleSubmit(onSubmit)}>
           <Input
             name="name"
