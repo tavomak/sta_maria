@@ -6,15 +6,15 @@ const Hamburger = ({ open = false, setOpen }) => {
       aria-label="Menu"
       onClick={() => setOpen(!open)}
     >
-      <div className="grid justify-items-center gap-1">
+      <div className="grid justify-items-center gap-1 relative">
         <span
-          className={`h-[2px] w-4 rounded-full bg-white transition ${open && "rotate-45 translate-y-2"} `}
+          className={`h-[2px] w-4 rounded-full bg-white transition ${open && "absolute top-1/2 left-1/2 rotate-45 -translate-y-1/2 -translate-x-1/2"} `}
         />
         <span
           className={`h-[2px] w-4 rounded-full bg-white transition ${open && "scale-x-0"}`}
         />
         <span
-          className={`h-[2px] w-4 rounded-full bg-white ${open && "-rotate-45 -translate-y-2"}`}
+          className={`h-[2px] w-4 rounded-full bg-white ${open && "absolute top-1/2 left-1/2 -rotate-45 -translate-y-1/2 -translate-x-1/2"}`}
         />
       </div>
     </button>
