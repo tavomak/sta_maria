@@ -1,5 +1,6 @@
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
+import { FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const { t } = useTranslation("common");
@@ -99,9 +100,18 @@ const Footer = () => {
       <div className="relative z-10">
         <div className="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
           <div className="flex items-stretch justify-center">
-            <h3 className="text-white text-balance uppercase font-semibold drop-shadow">
-              {t("footerTitle")}
-            </h3>
+            <p className="text-white text-sm uppercase font-semibold drop-shadow flex items-center">
+              <span className="pe-2">{new Date().getFullYear()}</span>
+              <span>{t("footerTitle")} </span>
+              <span className="ps-4 pe-2">
+                <FaEnvelope />
+              </span>
+              <span>
+                <a href="mailto:contact@stamariayachts.com" className="text-sm">
+                  contact@stamariayachts.com
+                </a>
+              </span>
+            </p>
             <Image
               src="/sta_maria_white.svg"
               alt="Logo"
