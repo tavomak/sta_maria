@@ -19,7 +19,7 @@ const Services = () => {
             {Object.values(services).map((item) => (
               <Button
                 key={item.title}
-                className="w-full md:w-1/2 lg:w-1/6 text-start block rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-700 border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+                className="w-full md:w-1/2 lg:w-1/6 text-start block rounded-xl bg-gradient-to-r from-cyan-600 to-cyan-700 border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring hover:shadow-lg"
                 href="#"
               >
                 <span
