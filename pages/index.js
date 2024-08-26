@@ -4,6 +4,7 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import useTranslation from "next-translate/useTranslation";
 import Layout from "@/components/Templates/Layout";
 import CustomLightbox from "@/components/Molecules/CustomLightbox";
+import Services from "@/components/Molecules/Services";
 import "yet-another-react-lightbox/styles.css";
 
 export default function Home() {
@@ -114,6 +115,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <Services />
     </Layout>
   );
 }

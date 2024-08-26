@@ -15,5 +15,28 @@
   "contactSubmit": "Submit",
   "contactSuccess": "Your message has been sent. Thank you!",
   "contactError": "There was an error sending your message. Please try again later.",
-  "footerTitle": "© Santa Maria Yachts. All Rights Reserved."
+  "footerTitle": "© Santa Maria Yachts. All Rights Reserved.",
+  "servicesHeading": "Services",
+  "services": {
+    "dailyTours": {
+      "title": "Daily tours",
+      "icon": "01"
+    },
+    "charters": {
+      "title": "Charters",
+      "icon": "02"
+    },
+    "experiences": {
+      "title": "Experiences",
+      "icon": "03"
+    },
+    "familyTrips": {
+      "title": "Family trips",
+      "icon": "04"
+    },
+    "corporateEvents": {
+      "title": "Corporate events",
+      "icon": "08"
+    }
+  }
 }
