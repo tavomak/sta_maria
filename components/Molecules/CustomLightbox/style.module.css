@@ -1,0 +1,58 @@
+.card {
+  @apply relative block w-full overflow-hidden;
+
+  &:hover {
+    .cardImage {
+      transform: scale(1);
+    }
+    .cardCaption::before {
+      opacity: 1;
+    }
+    .cardImage {
+      transform: scale(1);
+    }
+    .cardMain,
+    .cardFooter {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .cardImage {
+    width: 100%;
+    height: auto;
+    transform: scale(1.1);
+    transition-property: transform;
+  }
+  .cardCaption {
+    @apply text-left overflow-hidden absolute top-0 inset-0 text-white uppercase drop-shadow;
+    padding: 0.5rem;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(1, 54, 85, 0.7) 0%,
+        rgba(0, 69, 115, 0.4) 100%
+      );
+      opacity: 0;
+      transition-property: opacity;
+      z-index: -1;
+    }
+  }
+  .cardMain {
+    transition-property: transform;
+  }
+  .cardFooter {
+    @apply text-xs;
+    transform: translate3d(0, -5rem, 0);
+    transition-property: transform;
+  }
+  & .cardCaption::before,
+  & .cardImage,
+  & .cardMain,
+  & .cardFooter {
+    transition-duration: var(--default-timing-duration);
+    transition-timing-function: var(--default-timing-function);
+  }
+}

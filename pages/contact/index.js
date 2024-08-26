@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Resend } from "resend";
+import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
+import useNotify from "@/hooks/useNotify";
 import Layout from "@/components/Templates/Layout";
 import Input from "@/components/Atoms/Input";
 import Button from "@/components/Atoms/Button";
@@ -13,23 +15,28 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
   const { t } = useTranslation("common");
+  const [notification] = useNotify();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (form) => {
+    setLoading(true);
     try {
-      const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-
-      resend.emails.send({
-        from: process.env.NEXT_PUBLIC_RESEND_FROM,
-        to: process.env.NEXT_PUBLIC_RESEND_TO,
-        subject: "Nuevo Contacto web",
-        html: `
-        <p><strong>Nombre</strong>${form.name}</p>
-        <p><strong>Email</strong>${form.email}</p>
-        <p><strong>Mensaje</strong>${form.message}</p>
-        `,
-      });
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_SERVICES_ID,
+        { ...form },
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
+          // eslint-disable-next-line prettier/prettier
+        }
+      );
+      if (response.status !== 200) throw new Error();
+      notification("success", t("contactSuccess"));
     } catch (error) {
-      console.error(error);
+      console.error({ error });
+      notification("success", t("contactError"));
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -38,10 +45,13 @@ const Contact = () => {
         <Image
           src="/06experience.jpg"
           alt="Sta Maria Yachts"
-          fill
-          objectFit="cover"
-          objectPosition="bottom"
-          className=""
+          width={500}
+          height={500}
+          style={{
+            width: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
         <div className="overlay absolute w-full h-full bg-indigo-950 opacity-50" />
         <h1 className="hidden text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-4xl w-full text-center">
@@ -77,12 +87,15 @@ const Contact = () => {
               className="w-full text-sm focus:outline-none focus-visible:outline-none"
               rows="8"
               id="message"
+              {...register("message")}
             />
             <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
               {t("contactMessage")}
             </span>
           </label>
-          <Button submit>{t("contactSubmit")}</Button>
+          <Button loading={loading} submit>
+            {t("contactSubmit")}
+          </Button>
         </form>
       </section>
     </Layout>

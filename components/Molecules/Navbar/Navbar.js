@@ -53,7 +53,7 @@ const Navbar = ({ className }) => {
                   <h2 className="flex items-center gap-2">
                     <span>
                       <Image
-                        src="/sta-ico-03.svg"
+                        src="/sta-ico-02.svg"
                         alt="Inicio"
                         width={30}
                         height={30}

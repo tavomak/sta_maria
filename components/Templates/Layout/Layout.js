@@ -1,4 +1,5 @@
 import { Roboto, Playfair } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 
@@ -110,6 +111,8 @@ const Layout = ({ children, title, description }) => {
       <main className="min-h-[calc(100vh-217px)] flex flex-col">
         {children}
       </main>
+      <ToastContainer />
+
       <Footer />
     </div>
   );

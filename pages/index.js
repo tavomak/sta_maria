@@ -88,7 +88,8 @@ export default function Home() {
           <CustomLightbox
             slides={experiences}
             primaryImage="/04experience.jpg"
-            title="Experiences"
+            title={t("home:ExperienceTitle")}
+            footerText={t("home:ExperienceFooter")}
           />
         </div>
       </section>
@@ -108,7 +109,8 @@ export default function Home() {
           <CustomLightbox
             slides={yachts}
             primaryImage="/07yachts.jpg"
-            title="Yachts"
+            title={t("home:YachtsTitle")}
+            footerText={t("home:YachtsFooter")}
           />
         </div>
       </section>

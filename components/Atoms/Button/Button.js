@@ -11,7 +11,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${className || "rounded-lg border border-sky-950 bg-black py-2 px-6 text-center text-sm font-bold text-white transition hover:bg-sky-700 hover:text-sky-950 focus:outline-none focus:ring active:bg-sky-700 hover:enabled:scale-[1.05] hover:enabled:shadow-xl disabled:opacity-50"}`}
+      className={`${className || "flex items-center rounded-lg border border-sky-950 bg-black py-2 px-6 text-center text-sm font-bold text-white transition hover:bg-sky-700  focus:outline-none focus:ring active:bg-sky-700 hover:enabled:scale-[1.05] hover:enabled:shadow-xl disabled:opacity-50"}`}
       type={submit ? "submit" : "button"}
       onClick={onClick}
       disabled={disabled}

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
+import style from "./style.module.css";
 
-const CustomLightbox = ({ primaryImage, slides, title }) => {
+const CustomLightbox = ({ primaryImage, slides, title, footerText }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="relative">
+    <figure className={`${style.card}`}>
       <button
         className="block w-full"
         type="button"
@@ -16,23 +17,24 @@ const CustomLightbox = ({ primaryImage, slides, title }) => {
           alt="Sta Maria Yachts"
           width={500}
           height={500}
-          style={{ width: "100%", height: "auto" }}
+          className={style.cardImage}
         />
-        <div className="absolute top-4 left-4 flex items-center justify-center">
-          <p className="text-white text-balance uppercase font-semibold drop-shadow">
-            {title}
-          </p>
+        <figcaption className={`${style.cardCaption}`}>
+          <main className={style.cardMain}>
+            <p className="font-semibold">{title}</p>
+          </main>
           {slides?.length > 1 &&
             slides.map((slide) => (
               <span
                 key={slide.src}
-                className="h-3 w-3 rounded-full bg-white mx-2 opacity-80 drop-shadow"
+                className="h-3 w-3 rounded-full bg-white mx-2 opacity-80 drop-shadow hidden"
               />
             ))}
-        </div>
+          <footer className={style.cardFooter}>{footerText}</footer>
+        </figcaption>
       </button>
       <Lightbox open={open} close={() => setOpen(false)} slides={slides} />
-    </div>
+    </figure>
   );
 };
 
