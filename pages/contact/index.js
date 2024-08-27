@@ -34,7 +34,7 @@ const Contact = () => {
       notification("success", t("contactSuccess"));
     } catch (error) {
       console.error({ error });
-      notification("success", t("contactError"));
+      notification("error", t("contactError"));
     } finally {
       setLoading(false);
     }
