@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { FaEnvelope } from "react-icons/fa";
 
@@ -110,9 +111,7 @@ const Footer = () => {
                 <span className="ps-4 pe-2">
                   <FaEnvelope />
                 </span>
-                <a href="mailto:contact@stamariayachts.com" className="text-xs">
-                  contact@stamariayachts.com
-                </a>
+                <Link href="/contact">contact@stamariayachts.com</Link>
               </span>
             </p>
             <Image
